@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALAMIN VIP HACK SYSTEM</title>
+    <style>
+        /* Login Page Styles */
+        .login-page {
+            font-family: 'Courier New', monospace;
+            background-color: #000;
+            color: #0f0;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: 
+                linear-gradient(rgba(255, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            overflow: hidden;
+        }
+        
+        .login-container {
+            background-color: rgba(20, 0, 0, 0.7);
+            border: 1px solid #0f0;
+            border-radius: 5px;
+            padding: 30px;
+            width: 320px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid #f00;
+            border-radius: 8px;
+            animation: pulse 2s infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 0 0 10px #0f0;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #0f0;
+            opacity: 0.8;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #0f0;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(10, 0, 0, 0.5);
+            border: 1px solid #f00;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: #0f0;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(80, 0, 0, 0.7);
+            border: 1px solid #f00;
+            color: #0f0;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .login-btn:hover {
+            background-color: rgba(100, 0, 0, 0.9);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+        }
+        
+        .error-msg {
+            color: #ff5555;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 0, 0, 0.1) 0%,
+                rgba(0, 255, 0, 0) 10%
+            );
+            background-size: 100% 8px;
+            animation: scanline 8s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        .glitch {
+            animation: glitch 1s linear infinite;
+        }
+        
+        @keyframes glitch {
+            0% { text-shadow: 2px 0 #0f0, -2px 0 #f00; }
+            25% { text-shadow: -2px 0 #0f0, 2px 0 #f00; }
+            50% { text-shadow: 2px 0 #f00, -2px 0 #0f0; }
+            75% { text-shadow: -2px 0 #f00, 2px 0 #0f0; }
+            100% { text-shadow: 2px 0 #0f0, -2px 0 #f00; }
+        }
+        
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Main System Styles */
+        .system-page {
+            display: none;
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #0f0;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            flex-direction: column;
+            background-image: 
+                linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 150, 0, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-attachment: fixed;
+        }
+        
+        .header {
+            background-color: #000;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #f00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo {
+            height: 40px;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 2px solid #f00;
+        }
+        
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        
+        .left-panel {
+            width: 350px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-right: 1px solid #f00;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .login-box, .predict-box {
+            background-color: rgba(20, 0, 0, 0.5);
+            border: 1px solid #f00;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            margin-top: 0;
+            color: #0f0;
+            text-align: center;
+        }
+        
+        .number-inputs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .system-page input {
+            background-color: #000;
+            border: 1px solid #f00;
+            color: #0f0;
+            padding: 12px;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        
+        .system-page button {
+            background-color: #330000;
+            color: #0f0;
+            border: 1px solid #f00;
+            padding: 12px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .system-page button:hover {
+            background-color: #550000;
+        }
+        
+        .result-box {
+            background-color: rgba(20, 0, 0, 0.5);
+            border: 1px solid #f00;
+            border-radius: 5px;
+            padding: 15px;
+            min-height: 80px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .big {
+            color: #00ff00;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        
+        .small {
+            color: #ff5555;
+            font-weight: bold;
+            text-shadow: 0 0 5px #ff5555;
+        }
+        
+        .violet {
+            color: #aa00ff;
+            font-weight: bold;
+            text-shadow: 0 0 5px #aa00ff;
+        }
+        
+        .green {
+            color: #00ff00;
+            font-weight: bold;
+            text-shadow: 0 0 5px #00ff00;
+        }
+        
+        .red {
+            color: #ff5555;
+            font-weight: bold;
+            text-shadow: 0 0 5px #ff5555;
+        }
+        
+        .history {
+            flex: 1;
+            overflow-y: auto;
+            border: 1px solid #f00;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: rgba(10, 0, 0, 0.3);
+        }
+        
+        .history-item {
+            padding: 8px;
+            border-bottom: 1px solid #f00;
+            font-size: 14px;
+        }
+        
+        .footer {
+            background-color: #000;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #f00;
+            font-size: 12px;
+        }
+        
+        .dkwin-frame {
+            flex: 1;
+            border: none;
+            background-color: #000;
+        }
+        
+        /* Petan specific styles */
+        .petan-btn {
+            background-color: #330000 !important;
+            color: #ff5555 !important;
+            border: 1px solid #ff5555 !important;
+            margin-top: 10px;
+        }
+        
+        .petan-btn:hover {
+            background-color: #550000 !important;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7) !important;
+        }
+        
+        .petan-result {
+            color: #ff5555;
+            font-weight: bold;
+            text-shadow: 0 0 5px #ff5555;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="login-page">
+        <div class="scanline"></div>
+        
+        <div class="login-container">
+            <div class="title glitch">ALAMIN VIP HACK</div>
+            <div class="subtitle">নামাজ একমাত্র পথ, যা আমাদের জীবনে আল্লাহর রহমত এনে দেয়।</div>
+            <div class="subtitle"> নামাজ পড়ার কথা  মনে আছে তো সবার.!! </div>
+            <div class="subtitle"> 😎𝗔𝗟𝗔𝗠𝗜𝗡 ✅🤫</div>
+            
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter username" value="">
+            </div>
+            
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter password" value="">
+            </div>
+            
+            <button class="login-btn" onclick="login()">LOGIN</button>
+            
+            <div id="errorMsg" class="error-msg"></div>
+            
+            <div style="text-align: center; margin-top: 20px; font-size: 12px;">
+                <span class="blink">⚠️</span> USE: <strong>দোয়া করে </strong> / <strong>5 স্টেজ নিবেন </strong> <span class="blink">⚠️</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main System Page (hidden initially) -->
+    <div id="systemPage" class="system-page">
+        <div class="header">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjkwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZjAwMDAiIHN0cm9rZS13aWR0aD0iNSIvPjx0ZXh0IHg9IjEwMCIgeT0iMTE1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNDAiIGZpbGw9IiNmZjAwMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlY8L3RleHQ+PC9zdmc+" class="logo" alt="V">
+            <h2> SM TRAM VIP 𝘏𝘈𝘊𝘒 𝘈𝘔𝘙 </h2>
+            <h5>SM TEAM ব্র্যান্ড বুঝোনাই বেপারটা <h5>
+           <h9> ডান পাশে তাকাও DKWIN   <h9>
+        </div>
+
+        <div class="container">
+            <div class="left-panel">
+                <div id="predictBox" class="predict-box">
+                    <h2>🔢 ENTER 4 DIGITS</h2>
+                    <div class="number-inputs">
+                        <input type="number" id="num1" min="0" max="9" placeholder="0" maxlength="1">
+                        <input type="number" id="num2" min="0" max="9" placeholder="0" maxlength="1">
+                        <input type="number" id="num3" min="0" max="9" placeholder="0" maxlength="1">
+                        <input type="number" id="num4" min="0" max="9" placeholder="0" maxlength="1">
+                    </div>
+                    <button onclick="petanSystem()" class="petan-btn">GET PREDICTION</button>
+                    <div class="result-box" id="resultBox">
+                        <div style="color:#0f0">Enter 4 digits to get prediction</div>
+                    </div>
+                    <div class="history" id="historyBox"></div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <iframe id="dkwinFrame" class="dkwin-frame" src="about:blank"></iframe>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span class="blink">⚠️</span> PETAN SYSTEM SECURE | MADE BY ALAMIN <span class="blink">⚠️</span>
+        </div>
+    </div>
+
+    <script>
+        // Petan patterns with predictions
+        const petanPatterns = [
+            {nums: [0,0,1,2], predict: [5,6,7,8,9], size: 'big', desc: "2 same small → next big"},
+            {nums: [1,1,2,3], predict: [5,6,7,8,9], size: 'big', desc: "2 same small → next big"},
+            {nums: [2,2,3,4], predict: [5,6,7,8,9], size: 'big', desc: "2 same small → next big"},
+            {nums: [3,3,4,5], predict: [5,6,7,8,9], size: 'big', desc: "2 same small → next big"},
+            {nums: [4,4,5,6], predict: [5,6,7,8,9], size: 'big', desc: "2 same small → next big"},
+            {nums: [5,5,6,7], predict: [0,1,2,3,4], size: 'small', desc: "2 same big → next small"},
+            {nums: [6,6,7,8], predict: [0,1,2,3,4], size: 'small', desc: "2 same big → next small"},
+            {nums: [7,7,8,9], predict: [0,1,2,3,4], size: 'small', desc: "2 same big → next small"},
+            {nums: [8,8,9,0], predict: [0,1,2,3,4], size: 'small', desc: "2 same big → next small"},
+            {nums: [9,9,0,1], predict: [0,1,2,3,4], size: 'small', desc: "2 same big → next small"},
+            
+            // Triple same numbers
+            {nums: [0,0,0,1], predict: [5,6,7,8,9], size: 'big', desc: "3 same small → next big"},
+            {nums: [1,1,1,2], predict: [5,6,7,8,9], size: 'big', desc: "3 same small → next big"},
+            {nums: [5,5,5,6], predict: [0,1,2,3,4], size: 'small', desc: "3 same big → next small"},
+            {nums: [6,6,6,7], predict: [0,1,2,3,4], size: 'small', desc: "3 same big → next small"},
+            
+            // Sequential patterns
+            {nums: [0,1,2,3], predict: [4], size: 'small', desc: "Sequential small → next small"},
+            {nums: [1,2,3,4], predict: [0,5], size: 'mixed', desc: "Sequential small → next 0 or 5"},
+            {nums: [5,6,7,8], predict: [4,9], size: 'mixed', desc: "Sequential big → next 4 or 9"},
+            {nums: [6,7,8,9], predict: [0,5], size: 'mixed', desc: "Sequential big → next 0 or 5"},
+            
+            // Reverse sequential
+            {nums: [9,8,7,6], predict: [0,5], size: 'mixed', desc: "Reverse sequential → next 0 or 5"},
+            {nums: [8,7,6,5], predict: [4,9], size: 'mixed', desc: "Reverse sequential → next 4 or 9"},
+            
+            // Alternating patterns
+            {nums: [0,5,0,5], predict: [0,5], size: 'mixed', desc: "Alternating 0-5 → next 0 or 5"},
+            {nums: [1,6,1,6], predict: [1,6], size: 'mixed', desc: "Alternating 1-6 → next 1 or 6"},
+            {nums: [0,9,0,9], predict: [0,5,9], size: 'mixed', desc: "Extreme alternation → next 0/5/9"},
+            
+            // Step patterns
+            {nums: [0,2,4,6], predict: [1,3,5,7,8], size: 'mixed', desc: "Even steps → next odd"},
+            {nums: [1,3,5,7], predict: [0,2,4,6,8,9], size: 'mixed', desc: "Odd steps → next even"},
+            {nums: [0,3,6,9], predict: [1,2,4,5,7,8], size: 'mixed', desc: "Multiples of 3 → next non-multiple"},
+            
+            // Mirror patterns
+            {nums: [0,1,8,9], predict: [2,3,4,5,6,7], size: 'mixed', desc: "Mirror extremes → next middle"},
+            {nums: [1,2,7,8], predict: [0,3,4,5,6,9], size: 'mixed', desc: "Near-mirror → next other"},
+            
+            // Additional patterns...
+            {nums: [0,0,2,2], predict: [1,3,4,5,6,7,8,9], size: 'mixed', desc: "Double pairs small → next other"},
+            {nums: [5,5,7,7], predict: [0,1,2,3,4,6,8,9], size: 'mixed', desc: "Double pairs big → next other"},
+            {nums: [0,0,5,5], predict: [1,2,3,4,6,7,8,9], size: 'mixed', desc: "Extreme pairs → next middle"},
+            {nums: [0,1,5,6], predict: [2,3,4,7,8,9], size: 'mixed', desc: "Low and near-low → next other"},
+            {nums: [2,3,7,8], predict: [0,1,4,5,6,9], size: 'mixed', desc: "Middle and near-high → next other"},
+            {nums: [0,2,5,7], predict: [1,3,4,6,8,9], size: 'mixed', desc: "Spread with extreme → next other"},
+            {nums: [1,3,6,8], predict: [0,2,4,5,7,9], size: 'mixed', desc: "Spread with near-extreme → next other"},
+            {nums: [2,4,7,9], predict: [0,1,3,5,6,8], size: 'mixed', desc: "Spread with high → next low"},
+            {nums: [0,4,8,2], predict: [1,3,5,6,7,9], size: 'mixed', desc: "Even steps → next odd"},
+            {nums: [5,5,9,3], predict: [7,8], size: 'mixed', desc: "Odd steps → next even"},
+            {nums: [0,5,1,6], predict: [2,3,4,7,8,9], size: 'mixed', desc: "Color sequence → next other"},
+            {nums: [2,3,5,7], predict: [0,1,4,6,8,9], size: 'mixed', desc: "All primes → next non-prime"},
+            {nums: [0,1,4,6], predict: [2,3,5,7,8,9], size: 'mixed', desc: "Non-primes → next prime"},
+            {nums: [0,2,4,6], predict: [1,3,5,7,8,9], size: 'mixed', desc: "All even → next odd"},
+            {nums: [1,3,5,7], predict: [0,2,4,6,8,9], size: 'mixed', desc: "All odd → next even"},
+            {nums: [0,1,2,3], predict: [4,5,6,7,8,9], size: 'mixed', desc: "All small → next big"},
+            {nums: [5,6,7,8], predict: [0,1,2,3,4,9], size: 'mixed', desc: "All big → next small/extreme"},
+            {nums: [0,5,0,5], predict: [1,2,3,4,6,7,8,9], size: 'mixed', desc: "All violet → next green/red"},
+            {nums: [1,3,7,9], predict: [0,2,4,5,6,8], size: 'mixed', desc: "All green → next red/violet"},
+            {nums: [2,4,6,8], predict: [0,1,3,5,7,9], size: 'mixed', desc: "All red → next green/violet"},
+            {nums: [0,0,0,0], predict: [5,6,7,8,9], size: 'big', desc: "All 0 → next big"},
+            {nums: [5,5,5,5], predict: [0,1,2,3,4], size: 'small', desc: "All 5 → next small"}
+        ];
+
+        function login() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const errorMsg = document.getElementById("errorMsg");
+            
+            if (username === "ULTRAPRO" && password === "ALAMINGTX") {
+                // Successful login
+                errorMsg.style.display = "none";
+                
+                // Add success effect
+                document.querySelector('.login-container').style.borderColor = "#0f0";
+                document.querySelector('.login-container').style.boxShadow = "0 0 30px rgba(0, 255, 0, 0.8)";
+                
+                // Show success message
+                errorMsg.textContent = "✓ ACCESS GRANTED! Loading system...";
+                errorMsg.style.color = "#0f0";
+                errorMsg.style.display = "block";
+                
+                // Switch to system page after delay
+                setTimeout(() => {
+                    document.getElementById("loginPage").style.display = "none";
+                    document.getElementById("systemPage").style.display = "flex";
+                    document.getElementById("dkwinFrame").src = "https://dkwin9.com/#/register?invitationCode=42532252147";
+                    document.getElementById("num1").focus();
+                }, 1500);
+            } else {
+                // Failed login
+                errorMsg.textContent = "⚠️ ACCESS DENIED! Invalid credentials";
+                errorMsg.style.color = "#ff5555";
+                errorMsg.style.display = "block";
+                
+                // Add glitch effect on error
+                document.querySelector('.login-container').classList.add('glitch');
+                setTimeout(() => {
+                    document.querySelector('.login-container').classList.remove('glitch');
+                }, 1000);
+            }
+        }
+
+        // Petan System with single result output
+        function petanSystem() {
+            const num1 = document.getElementById("num1").value;
+            const num2 = document.getElementById("num2").value;
+            const num3 = document.getElementById("num3").value;
+            const num4 = document.getElementById("num4").value;
+            
+            // Validate inputs
+            if (num1 === "" || num2 === "" || num3 === "" || num4 === "") {
+                document.getElementById("resultBox").innerHTML = 
+                    '<span style="color:#ff5555">⚠️ Please enter all 4 numbers</span>';
+                return;
+            }
+            
+            const nums = [
+                parseInt(num1) || 0,
+                parseInt(num2) || 0,
+                parseInt(num3) || 0,
+                parseInt(num4) || 0
+            ];
+            
+            if (nums.some(n => n < 0 || n > 9 || isNaN(n))) {
+                document.getElementById("resultBox").innerHTML = 
+                    '<span style="color:#ff5555">⚠️ Please enter valid numbers (0-9)</span>';
+                return;
+            }
+            
+            // Find matching pattern with petan algorithm
+            let matchedPattern = petanPatterns.find(p => JSON.stringify(p.nums) === JSON.stringify(nums));
+            
+            let predictedNum, size, color;
+            
+            if (matchedPattern) {
+                // Get random prediction from pattern options
+                const possibleNumbers = matchedPattern.predict;
+                predictedNum = possibleNumbers[Math.floor(Math.random() * possibleNumbers.length)];
+                size = predictedNum >= 5 ? 'big' : 'small';
+            } else {
+                // If no pattern matches, use advanced prediction
+                const sum = nums.reduce((a, b) => a + b, 0);
+                const avg = sum / 4;
+                const counts = {};
+                nums.forEach(n => counts[n] = (counts[n] || 0) + 1);
+                const repeating = Object.entries(counts).filter(([num, count]) => count >= 2);
+                
+                if (repeating.length > 0) {
+                    const [repeatNum, repeatCount] = repeating[0];
+                    const num = parseInt(repeatNum);
+                    
+                    if (repeatCount >= 3) {
+                        // Opposite size
+                        const oppositeSize = num >= 5 ? 
+                            [0,1,2,3,4] : // if big, predict small
+                            [5,6,7,8,9];  // if small, predict big
+                        predictedNum = oppositeSize[Math.floor(Math.random() * oppositeSize.length)];
+                    } else {
+                        // Same size
+                        const sameSize = num >= 5 ? 
+                            [5,6,7,8,9] : // if big, predict big
+                            [0,1,2,3,4];  // if small, predict small
+                        predictedNum = sameSize[Math.floor(Math.random() * sameSize.length)];
+                    }
+                } else if (avg < 2.5) {
+                    // Low average → predict big
+                    const bigNums = [5,6,7,8,9];
+                    predictedNum = bigNums[Math.floor(Math.random() * bigNums.length)];
+                } else if (avg > 6.5) {
+                    // High average → predict small
+                    const smallNums = [0,1,2,3,4];
+                    predictedNum = smallNums[Math.floor(Math.random() * smallNums.length)];
+                } else {
+                    // Middle average → random prediction
+                    predictedNum = Math.floor(Math.random() * 10);
+                }
+                
+                size = predictedNum >= 5 ? 'big' : 'small';
+            }
+            
+            // Determine color
+            if (predictedNum === 0 || predictedNum === 5) {
+                color = "violet";
+            } else if ([1,3,7,9].includes(predictedNum)) {
+                color = "green";
+            } else {
+                color = "red";
+            }
+            
+            // Display single result
+            const resultHTML = `
+                <div>📊 Input: ${nums.join("-")}</div>
+                <div style="margin-top:10px;">
+                    <span class="${size}">${predictedNum} (${size.toUpperCase()})</span> | 
+                    <span class="${color}">${color.toUpperCase()}</span>
+                </div>
+                <div style="margin-top:5px;font-size:12px;">
+                    ${matchedPattern ? "🔍 " + matchedPattern.desc : "📈 Statistical prediction"}
+                </div>
+            `;
+            
+            document.getElementById("resultBox").innerHTML = resultHTML;
+            
+            // Add to history
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            historyItem.innerHTML = `
+                ${new Date().toLocaleTimeString()} | 
+                Input: ${nums.join("-")} → 
+                <span class="${size}">${predictedNum}</span> | 
+                <span class="${color}">${color}</span> | 
+                ${matchedPattern ? "🔍" : "📈"}
+            `;
+            document.getElementById("historyBox").prepend(historyItem);
+            
+            // Clear inputs and focus
+            document.querySelectorAll('.number-inputs input').forEach(input => input.value = '');
+            document.getElementById("num1").focus();
+        }
+
+        // Auto-focus between inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById("num1")) {
+                document.querySelectorAll('.number-inputs input').forEach((input, index) => {
+                    input.addEventListener('input', function() {
+                        if (this.value.length === 1 && index < 3) {
+                            document.querySelectorAll('.number-inputs input')[index + 1].focus();
+                        }
+                    });
+                    
+                    // Allow only single digit
+                    input.addEventListener('keydown', function(e) {
+                        if (this.value.length >= 1 && e.key !== 'Backspace' && e.key !== 'Delete') {
+                            e.preventDefault();
+                        }
+                    });
+                });
+            }
+            
+            // Auto-focus password field when username is entered
+            if (document.getElementById("username")) {
+                document.getElementById("username").addEventListener('keyup', function(e) {
+                    if (e.key === 'Enter') {
+                        document.getElementById("password").focus();
+                    }
+                });
+                
+                // Auto-submit when pressing enter in password field
+                document.getElementById("password").addEventListener('keyup', function(e) {
+                    if (e.key === 'Enter') {
+                        login();
+                    }
+                });
+            }
+        });
+
+        // Add shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
